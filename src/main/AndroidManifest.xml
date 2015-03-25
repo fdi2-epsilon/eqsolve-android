@@ -8,6 +8,7 @@
                 <category a:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity a:name=".ErrorActivity" a:label="@string/title_activity_error"></activity>
     </application>
 
 </manifest>
