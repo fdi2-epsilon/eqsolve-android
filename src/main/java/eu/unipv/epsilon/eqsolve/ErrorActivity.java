@@ -23,6 +23,7 @@ public class ErrorActivity extends Activity {
         //getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -37,5 +38,6 @@ public class ErrorActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+    */
 
 }

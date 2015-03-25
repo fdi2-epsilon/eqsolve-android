@@ -8,7 +8,10 @@
                 <category a:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity a:name=".ErrorActivity" a:label="@string/title_activity_error"></activity>
+        <activity a:name=".ErrorActivity" a:label="@string/title_activity_error" a:parentActivityName=".MainActivity">
+            <!-- Parent activity, legacy 4.0 and lower support -->
+            <meta-data a:name="android.support.PARENT_ACTIVITY" a:value="eu.unipv.epsilon.eqsolve.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
