@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">eqsolve</string>
+    <string name="title_activity_main">Equation Solver</string>
+    <string name="title_activity_error">An error has occurred</string>
+
+    <string-array name="solver_names">
+        <item>Linear solver</item>
+        <item>Quadratic solver</item>
+    </string-array>
+
+    <string name="text_button_solve_default">Solve</string>
+    <string name="text_label_aparam">Value of \'a\':</string>
+    <string name="text_label_bparam">Value of \'b\':</string>
+    <string name="text_label_cparam">Value of \'c\':</string>
+    <string name="text_label_status_default">Results displayed here</string>
+</resources>
