@@ -1,95 +1,115 @@
-<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                a:layout_width="match_parent"
-                a:layout_height="match_parent"
-                a:padding="16dp"
-                a:animateLayoutChanges="true"
-                tools:context="eu.unipv.epsilon.eqsolve.MainActivity">
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
+              a:orientation="vertical"
+              a:layout_width="match_parent"
+              a:layout_height="match_parent">
 
-    <Spinner a:id="@+id/solverSelector"
-             a:layout_width="fill_parent"
-             a:layout_height="wrap_content"/>
+    <android.support.v7.widget.Toolbar
+            a:id="@+id/toolbar"
+            a:minHeight="?attr/actionBarSize"
+            a:background="?attr/colorPrimary"
+            a:elevation="5dp"
+            a:layout_width="match_parent"
+            a:layout_height="wrap_content">
 
-    <EditText a:id="@+id/parAField"
-              a:inputType="number"
-              a:ems="10"
-              a:layout_alignParentEnd="true"
-              a:layout_below="@id/solverSelector"
-              a:layout_margin="10dp"
-              a:layout_width="wrap_content"
-              a:layout_height="wrap_content"
-              a:gravity="center" />
+        <Spinner a:id="@+id/solverSelector"
+                 a:layout_width="wrap_content"
+                 a:layout_height="wrap_content"/>
 
-    <TextView a:id="@+id/parALabel"
-              a:text="@string/text_label_aparam"
-              a:textAppearance="?android:attr/textAppearanceMedium"
-              a:labelFor="@id/parAField"
-              a:layout_alignParentStart="true"
-              a:layout_alignBaseline="@id/parAField"
-              a:layout_width="wrap_content"
-              a:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
 
+    <RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    a:layout_width="match_parent"
+                    a:layout_height="match_parent"
+                    a:paddingBottom="@dimen/activity_vertical_margin"
+                    a:paddingLeft="@dimen/activity_horizontal_margin"
+                    a:paddingRight="@dimen/activity_horizontal_margin"
+                    a:paddingTop="@dimen/activity_vertical_margin"
+                    a:animateLayoutChanges="true"
+                    tools:context="eu.unipv.epsilon.eqsolve.MainActivity">
 
+        <EditText a:id="@+id/parAField"
+                  a:inputType="number"
+                  a:ems="10"
+                  a:layout_alignParentEnd="true"
+                  a:layout_margin="10dp"
+                  a:layout_width="wrap_content"
+                  a:layout_height="wrap_content"
+                  a:gravity="center" />
 
-    <EditText a:id="@+id/parBField"
-              a:inputType="number"
-              a:ems="10"
-              a:layout_alignParentEnd="true"
-              a:layout_below="@id/parAField"
-              a:layout_margin="10dp"
-              a:layout_width="wrap_content"
-              a:layout_height="wrap_content"
-              a:gravity="center" />
-
-    <TextView a:id="@+id/parBLabel"
-              a:text="@string/text_label_bparam"
-              a:textAppearance="?android:attr/textAppearanceMedium"
-              a:labelFor="@id/parBField"
-              a:layout_alignParentStart="true"
-              a:layout_alignBaseline="@id/parBField"
-              a:layout_width="wrap_content"
-              a:layout_height="wrap_content" />
+        <TextView a:id="@+id/parALabel"
+                  a:text="@string/text_label_aparam"
+                  a:textAppearance="?android:attr/textAppearanceMedium"
+                  a:labelFor="@id/parAField"
+                  a:layout_alignParentStart="true"
+                  a:layout_alignBaseline="@id/parAField"
+                  a:layout_width="wrap_content"
+                  a:layout_height="wrap_content" />
 
 
 
-    <EditText a:id="@+id/parCField"
-              a:inputType="number"
-              a:ems="10"
-              a:layout_alignParentEnd="true"
-              a:layout_below="@id/parBField"
-              a:layout_margin="10dp"
-              a:layout_width="wrap_content"
-              a:layout_height="wrap_content"
-              a:gravity="center" />
+        <EditText a:id="@+id/parBField"
+                  a:inputType="number"
+                  a:ems="10"
+                  a:layout_alignParentEnd="true"
+                  a:layout_below="@id/parAField"
+                  a:layout_margin="10dp"
+                  a:layout_width="wrap_content"
+                  a:layout_height="wrap_content"
+                  a:gravity="center" />
 
-    <TextView a:id="@+id/parCLabel"
-              a:text="@string/text_label_cparam"
-              a:textAppearance="?android:attr/textAppearanceMedium"
-              a:labelFor="@id/parCField"
-              a:layout_alignParentStart="true"
-              a:layout_alignBaseline="@id/parCField"
-              a:layout_width="wrap_content"
-              a:layout_height="wrap_content" />
-
-
-
-    <Button a:id="@+id/btnSolve"
-            a:text="@string/text_button_solve_default"
-            a:onClick="onSolveClick"
-            a:layout_below="@id/parCField"
-            a:layout_centerHorizontal="true"
-            a:layout_margin="20dp"
-            a:layout_width="fill_parent"
-            a:layout_height="wrap_content" />
-
-    <TextView a:id="@+id/statusLabel"
-              a:text="@string/text_label_status_default"
-              a:textAppearance="?android:attr/textAppearanceLarge"
-              a:layout_below="@id/btnSolve"
-              a:layout_width="fill_parent"
-              a:layout_height="wrap_content"
-              a:gravity="center" />
+        <TextView a:id="@+id/parBLabel"
+                  a:text="@string/text_label_bparam"
+                  a:textAppearance="?android:attr/textAppearanceMedium"
+                  a:labelFor="@id/parBField"
+                  a:layout_alignParentStart="true"
+                  a:layout_alignBaseline="@id/parBField"
+                  a:layout_width="wrap_content"
+                  a:layout_height="wrap_content" />
 
 
 
-</RelativeLayout>
+        <EditText a:id="@+id/parCField"
+                  a:inputType="number"
+                  a:ems="10"
+                  a:layout_alignParentEnd="true"
+                  a:layout_below="@id/parBField"
+                  a:layout_margin="10dp"
+                  a:layout_width="wrap_content"
+                  a:layout_height="wrap_content"
+                  a:gravity="center"
+                  a:visibility="gone" />
+
+        <TextView a:id="@+id/parCLabel"
+                  a:text="@string/text_label_cparam"
+                  a:textAppearance="?android:attr/textAppearanceMedium"
+                  a:labelFor="@id/parCField"
+                  a:layout_alignParentStart="true"
+                  a:layout_alignBaseline="@id/parCField"
+                  a:layout_width="wrap_content"
+                  a:layout_height="wrap_content"
+                  a:visibility="gone" />
+
+
+
+        <Button a:id="@+id/btnSolve"
+                a:text="@string/text_button_solve_default"
+                a:onClick="onSolveClick"
+                a:layout_below="@id/parCField"
+                a:layout_centerHorizontal="true"
+                a:layout_margin="20dp"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content" />
+
+        <TextView a:id="@+id/statusLabel"
+                  a:text="@string/text_label_status_default"
+                  a:textAppearance="?android:attr/textAppearanceLarge"
+                  a:layout_below="@id/btnSolve"
+                  a:layout_width="fill_parent"
+                  a:layout_height="wrap_content"
+                  a:gravity="center" />
+
+    </RelativeLayout>
+
+</LinearLayout>

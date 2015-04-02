@@ -1,5 +1,14 @@
 <resources>
-    <style name="AppTheme" parent="android:Theme.Holo.Light">
-        <!-- Theme customization goes in here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- It seems to use android:Theme.Material.Light in v21 and Holo.Light in previous -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item> <!-- or simply extend 'AppCompat.Light.NoActionBar' -->
+
+        <!-- https://developer.android.com/training/material/theme.html#StatusBar -->
+        <item name="colorPrimary">#4285f4</item>
+        <item name="colorPrimaryDark">#3367d6</item>
+        <!-- <item name="android:textColorPrimary">#a1f3ff</item> -->
+        <!-- <item name="windowBackground">#ffffff</item> -->
+        <item name="android:navigationBarColor">#880055ff</item>
     </style>
 </resources>

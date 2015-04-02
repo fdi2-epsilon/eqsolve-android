@@ -1,17 +1,19 @@
 package eu.unipv.epsilon.eqsolve;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import android.support.v7.widget.Toolbar;
 import eu.unipv.epsilon.eqsolve.equation.*;
 import eu.unipv.epsilon.eqsolve.solver.*;
 
 import java.util.Arrays;
 
-public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
     public static final String EXTRA_MESSAGE = "eu.unipv.epsilon.eqsolve.MESSAGE";
 
@@ -19,6 +21,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Set a toolbar to replace the action bar.
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         Spinner spinner = (Spinner) findViewById(R.id.solverSelector);
         populateSpinner(spinner);
@@ -91,9 +101,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
             ((TextView) findViewById(R.id.statusLabel)).setText(solutions);
         }
         catch (RuntimeException e) {
-            Intent intent = new Intent(this, ErrorActivity.class);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(e.getMessage());
+            builder.setNeutralButton("OK", null);
+            builder.create().show();
+
+            /*Intent intent = new Intent(this, ErrorActivity.class);
             intent.putExtra(EXTRA_MESSAGE, e.getMessage());
-            startActivity(intent);
+            startActivity(intent);*/
 
             //((TextView) findViewById(R.id.textView4)).setText(e.getMessage());
         }
