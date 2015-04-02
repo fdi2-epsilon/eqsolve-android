@@ -37,11 +37,11 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     private void populateSpinner(Spinner spinner) {
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),
                 R.array.solver_names, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.lay_drop_list);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
     }
